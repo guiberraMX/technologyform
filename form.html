@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+      
+        <meta charset="utf-8">
+        
+        <link rel="stylesheet" href="css/pass.css"  type="text/css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+          <script>
+              $(function(){
+                  $(".accordion-titulo").click(function(e){
+
+                                e.preventDefault();
+
+                                var contenido=$(this).next(".accordion-content");
+
+                                if(contenido.css("display")=="none"){ //open		
+                                  contenido.slideDown(250);			
+                                  $(this).addClass("open");
+                                }
+                                else{ //close		
+                                  contenido.slideUp(250);
+                                  $(this).removeClass("open");	
+                                }
+
+                              });
+                        });
+          </script>
+
+        <title>Formulario de Captura</title>
+        
+    </head>
+
+    <body>
+
+        <div class="container-main">
+        
+            <h1>Captura de datos</h1>
+                
+            <form name="formulario" method="post" action="\php\formcatch.php">
+             
+            <div class="acordion-conatiner">
+                
+                <a href="#" class="accordion-titulo">Datos de Facturación<span class="toggle-icon"></span></a>
+                
+                <div class="accordion-content">
+                
+                <input type="radio" name="non_fac" value="Sin Factura"/><label>Sin Factura</label>
+                
+                <br/> <br/>
+                
+                <label>Razón Social<span class="required">*</span></label>
+                <input type="text" name="raz_soc"/>
+                
+                <br/> <br/>
+
+                <label>Nombre Comercial</label>
+                <input type="text" name="nomb_com"/>
+ 
+                <br/> <br/>
+                
+                <label>RFC<span class="required">*</span></label>
+                <input type="text" name="RFC"/>
+                
+                <br/> <br/>
+                    
+                <h3>Domicilio Fiscal</h3>
+                    
+                <label>Calle<span class="required">*</span></label>
+                <input type="text" name="st_fis"/>
+                        
+                <label>N° Exterior<span class="required">*</span></label>
+                <input type="number" name="ext_fis"/>
+                    
+                <label>N° Interior<span class="required">*</span></label>
+                <input type="text" name="int_fis"/>
+                        
+                <br/> <br/>
+                    
+                <label>Colonia<span class="required">*</span></label>
+                <input type="text" name="col_fis"/>
+                    
+                <br/> <br/>
+                    
+                <label>Ciudad/Municipio<span class="required">*</span></label>
+                <input type="text" name="cd_fis"/>
+                    
+                <br/> <br/>
+                    
+                <label>Estado<span class="required">*</span></label>
+                <select type="text" name="edo_fis">
+                    <option value="Aguascalientes">Aguascalientes</option>
+                    <option value="Baja California">Baja California</option>
+                    <option value="Baja California Sur">Baja California Sur</option>
+                    <option value="Campeche">Campeche</option>
+                    <option value="Chiapas">Chiapas</option>
+                    <option value="Chihuahua">Chihuahua</option>
+                    <option value="Coahuila">Coahuila</option>
+                    <option value="Colima">Colima</option>
+                    <option value="Distrito Federal">Distrito Federal</option>
+                    <option value="Durango">Durango</option>
+                    <option value="Estado de México">Estado de México</option>
+                    <option value="Guanajuato">Guanajuato</option>
+                    <option value="Guerrero">Guerrero</option>
+                    <option value="Hidalgo">Hidalgo</option>
+                    <option value="Jalisco">Jalisco</option>
+                    <option value="Michoacán">Michoacán</option>
+                    <option value="Morelos">Morelos</option>
+                    <option value="Nayarit">Nayarit</option>
+                    <option value="Nuevo León">Nuevo León</option>
+                    <option value="Oaxaca">Oaxaca</option>
+                    <option value="Puebla">Puebla</option>
+                    <option value="Querétaro">Querétaro</option>
+                    <option value="Quintana Roo">Quintana Roo</option>
+                    <option value="San Luis Potosí">San Luis Potosí</option>
+                    <option value="Sinaloa">Sinaloa</option>
+                    <option value="Sonora">Sonora</option>
+                    <option value="Tabasco">Tabasco</option>
+                    <option value="Tamaulipas">Tamaulipas</option>
+                    <option value="Tlaxcala">Tlaxcala</option>
+                    <option value="Veracruz">Veracruz</option>
+                    <option value="Yucatán">Yucatán</option>
+                    <option value="Zacatecas">Zacatecas</option>
+                </select>
+                    
+                <br/> <br/>
+                    
+                <label>C.P.<span class="required">*</span></label>
+                <input type="number" name="cp_fis"/>
+                        
+                <br/> <br/>
+                
+                <label>Teléfono<span class="required">*</span></label>
+                <input type="number" name="tel_fis"/>
+                    
+                <br/> <br/>
+                    
+                <label>Celular</label>
+                <input type="number" name="cel_fis"/>
+                    
+                <br/> <br/>
+                    
+                <label>Correo Electrónico<span class="required">*</span></label>
+                <input type="email" name="ema_fis"/>
+                    </div>  
+                
+                </div>
+                
+            <br/> <br/>
+                
+            <div class="acordion-conatiner">
+                
+                    <a href="#" class="accordion-titulo">Datos de Envío<span class="toggle-icon"></span></a>
+                
+                    <div class="accordion-content">
+                
+                <input type="radio" name="non_env" value="True"/><label>Lo recojo en tienda</label>
+                
+                <h3>Nombre del comprador.</h3>
+
+                <label>Nombre Completo<span class="required">*</span></label>
+                <input type="text" name="nom_dir" placeholder="Nombre(s)"/>
+                <input type="text" name="ape_dir" placeholder="Apellidos"/>
+                    
+                <h3>Domicilio de entrega de la paquetería</h3>
+                
+                <input type="radio" name="same"  value="True"/><label>Usar mismos datos de facturación</label>
+                
+                <br/> <br/>
+                
+                <label>Calle<span class="required">*</span></label>
+                <input type="text" name="st_dir"/>
+                        
+                <label>N° Exterior<span class="required">*</span></label>
+                <input type="number" name="ext_dir"/>
+                    
+                <label>N° Interior<span class="required">*</span></label>
+                <input type="text" name="int_dir"/>
+                        
+                <br/> <br/>
+                    
+                <label>Colonia<span class="required">*</span></label>
+                <input type="text" name="col_dir"/>
+                    
+                <br/>
+                    
+                <label>Ciudad/Municipio<span class="required">*</span></label>
+                <input type="text" name="cd_dir"/>
+                    
+                <br/> <br/>
+                    
+                <label>Estado<span class="required">*</span></label>
+                <select type="text" name="edo_dir">
+                    <option value="Aguascalientes">Aguascalientes</option>
+                    <option value="Baja California">Baja California</option>
+                    <option value="Baja California Sur">Baja California Sur</option>
+                    <option value="Campeche">Campeche</option>
+                    <option value="Chiapas">Chiapas</option>
+                    <option value="Chihuahua">Chihuahua</option>
+                    <option value="Coahuila">Coahuila</option>
+                    <option value="Colima">Colima</option>
+                    <option value="Distrito Federal">Distrito Federal</option>
+                    <option value="Durango">Durango</option>
+                    <option value="Estado de México">Estado de México</option>
+                    <option value="Guanajuato">Guanajuato</option>
+                    <option value="Guerrero">Guerrero</option>
+                    <option value="Hidalgo">Hidalgo</option>
+                    <option value="Jalisco">Jalisco</option>
+                    <option value="Michoacán">Michoacán</option>
+                    <option value="Morelos">Morelos</option>
+                    <option value="Nayarit">Nayarit</option>
+                    <option value="Nuevo León">Nuevo León</option>
+                    <option value="Oaxaca">Oaxaca</option>
+                    <option value="Puebla">Puebla</option>
+                    <option value="Querétaro">Querétaro</option>
+                    <option value="Quintana Roo">Quintana Roo</option>
+                    <option value="San Luis Potosí">San Luis Potosí</option>
+                    <option value="Sinaloa">Sinaloa</option>
+                    <option value="Sonora">Sonora</option>
+                    <option value="Tabasco">Tabasco</option>
+                    <option value="Tamaulipas">Tamaulipas</option>
+                    <option value="Tlaxcala">Tlaxcala</option>
+                    <option value="Veracruz">Veracruz</option>
+                    <option value="Yucatán">Yucatán</option>
+                    <option value="Zacatecas">Zacatecas</option>
+                </select>
+                    
+                <br/> <br/>
+                    
+                <label>C.P.<span class="required">*</span></label>
+                <input type="number" name="cp_dir"/>
+                        
+                <br/> <br/>
+                
+                <label>Teléfono<span class="required">*</span></label>
+                <input type="number" name="tel_dir"/>
+                    
+                <br/> <br/>
+                    
+                <label>Celular</label>
+                <input type="number" name="cel_dir"/>
+                    
+                <br/> <br/>
+                    
+                <label>Correo Electrónico<span class="required">*</span></label>
+                <input type="email" name="ema_dir"/>
+                
+                <h2>Forma de envío de la paquetería</h2>
+                
+                <input type="radio" value="env1"/><label>Fedex (5 kg) - Día siguiente</label><label>$</label>
+                
+                <br/> <br/>
+                
+                <input type="radio" value="env1"/><label>Fedex (5 kg) - 2 a 5 días</label><label>$</label>
+                    
+                    </div>
+                        
+                    </div>
+                     
+            <br/> <br/>
+                
+            <div class="acordion-conatiner">
+                
+                    <a href="#" class="accordion-titulo">Forma de Pago<span class="toggle-icon"></span></a>
+                
+                    <div class="accordion-content">
+                    
+                <input type="radio" value="banco"/>
+                <label>Transferencia / Depósito Bancario</label>
+                
+                <br/> <br/>
+                
+                <input type="radio" value="paypal"/>
+                <label>Paypal</label>
+                
+                    </div>
+                    
+                </div>
+            
+            <br/> <br/>
+                
+            <div>
+                
+            <input value="Continuar compra" type="submit" />
+                
+            </div>
+                
+            </form>
+            
+        </div>
+        
+    </body>
+    
+</html>
