@@ -52,7 +52,18 @@ body{
     margin-right: 23px !important;
 }
 
+.go{
+    
+    background-color: #30a3f1 !important;
+    color: #36C2DA !important;
+    margin-top: 20px !important;
 
+    border-radius: 5px !important;
+    line-height: 22px !important;
+    border-color: rgba(0,0,0,0);
+    color: #fff !important;
+    font-size: 18px !important;
+}
 
 .accordion-titulo {
     position: relative;
